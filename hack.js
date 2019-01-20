@@ -34,7 +34,12 @@ export async function main(ns) {
 
     while (true) {
         await weaken(ns, host)
-        await growFor(ns, host, 10)
+
+        const start = ns.getServerMoneyAvailable(host);
         await hackFor(ns, host, 5)
+        await growUntil(ns, host, start)
+
+        // grow some more so we have continously growing income
+        await growFor(ns, host, 5)
     }
 }
