@@ -55,7 +55,7 @@ export async function main(ns) {
     
     for (const server of servers) {
         // won't try to infect parent
-        if (isMine(host) || parent === server) {
+        if (isMine(server) || parent === server) {
             continue
         }
         
