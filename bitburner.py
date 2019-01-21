@@ -12,6 +12,28 @@ def stocks(arr):
 
     return maximum
 
+def stocksMult(arr):
+    profit = 0
+    bought = None
+
+    for el in range(len(arr) - 1):
+        current = arr[el]
+        peek = arr[el + 1]
+        if bought != None and peek < current:
+            profit += current - bought
+            bought = None
+        elif bought == None and peek > current:
+            bought = current
+            # profit is a word that means revenue - expense
+            # not according to the game it doesn't!
+            # profit -= current
+    
+    if bought:
+        profit += arr[-1] - bought
+
+    return profit
+
+
 def largestPrimeFactor(prime):
     while prime % 2 == 0:
         prime //= 2
