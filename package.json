@@ -1,0 +1,18 @@
+{
+  "name": "bitburner",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/bin/* --outdir dist",
+    "filesync": "bitburner-filesync",
+    "watch": "bun run build --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bitburner-filesync": "^1.2.0-beta4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "sideEffects": false
+}
